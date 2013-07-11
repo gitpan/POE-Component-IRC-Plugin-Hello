@@ -1,0 +1,8 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/POE-Component-IRC-Plugin-Hello.t
+lib/POE/Component/IRC/Plugin/Hello.pm
+META.yml                                 Module meta-data (added by MakeMaker)
+SIGNATURE                                Public-key signature (added by MakeMaker)
