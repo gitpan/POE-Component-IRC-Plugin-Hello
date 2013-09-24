@@ -1,5 +1,5 @@
-POE-Component-IRC-Plugin-Hello version 0.001
-============================================
+POE-Component-IRC-Plugin-Hello version 0.001001
+===============================================
 
 POE::Component::IRC::Plugin::Hello is a PoCo-IRC plugin that greets back
 who greet him or a channel in public. It knows how to say hello in several

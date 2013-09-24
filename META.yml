@@ -1,25 +1,25 @@
---- #YAML:1.0
-name:               POE-Component-IRC-Plugin-Hello
-version:            0.001
-abstract:           PoCo-IRC plugin that says hello
+---
+abstract: 'PoCo-IRC plugin that says hello'
 author:
-    - Marius Gavrilescu <marius@ieval.ro>
-license:            perl
-distribution_type:  module
-configure_requires:
-    ExtUtils::MakeMaker:  0
+  - 'Marius Gavrilescu <marius@ieval.ro>'
 build_requires:
-    Test::MockObject:  1.09
-requires:
-    IRC::Utils:           0
-    List::Util:           0
-    perl:                 5.014
-    POE::Component::IRC::Plugin:  0
-no_index:
-    directory:
-        - t
-        - inc
-generated_by:       ExtUtils::MakeMaker version 6.57_05
+  Test::MockObject: 1.09
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.132510'
+license: perl
 meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: POE-Component-IRC-Plugin-Hello
+no_index:
+  directory:
+    - t
+    - inc
+requires:
+  IRC::Utils: 0
+  List::Util: 0
+  POE::Component::IRC::Plugin: 0
+  perl: 5.014
+version: 0.001001

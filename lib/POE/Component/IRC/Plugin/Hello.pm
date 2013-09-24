@@ -1,8 +1,9 @@
-package POE::Component::IRC::Plugin::Hello 0.001;
+package POE::Component::IRC::Plugin::Hello;
 
 use 5.014000;
 use strict;
 use warnings;
+our $VERSION = '0.001001';
 
 use List::Util qw/first/;
 
@@ -12,7 +13,7 @@ use POE::Component::IRC::Plugin qw/PCI_EAT_NONE/;
 sub new {
   my $class = shift;
   my $self = {
-	greetings => [qw/privet hello salut salutari neata neaţa hola hey hi bonjour niihau wassup sup hallo chikmaa tungjatjeta parev salam namaskaar mingalarba ahoy saluton allo moin aloha namaste shalom ciào ciao servus salve ave merhaba witaj hei hola selam sawubona/, "what's up", 'que tal', 'こんにちは', '你好'],
+	greetings => [qw/privet hello salut salutari neata neaţa hola hey hi bonjour wassup sup hallo chikmaa tungjatjeta parev salam namaskaar mingalarba ahoy saluton allo moin aloha namaste shalom ciào ciao servus salve ave merhaba witaj hei hola selam sawubona/, "what's up", 'que tal', 'こんにちは', '你好', 'ni hao'],
 	@_
   };
 
