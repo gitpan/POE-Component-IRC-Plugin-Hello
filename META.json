@@ -3,8 +3,8 @@
    "author" : [
       "Marius Gavrilescu <marius@ieval.ro>"
    ],
-   "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.132510",
+   "dynamic_config" : 0,
+   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.141520",
    "license" : [
       "perl_5"
    ],
@@ -35,10 +35,15 @@
             "IRC::Utils" : "0",
             "List::Util" : "0",
             "POE::Component::IRC::Plugin" : "0",
-            "perl" : "5.014"
+            "perl" : "5.014000"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.001001"
+   "resources" : {
+      "repository" : {
+         "url" : "https://git.ieval.ro/?p=poe-component-irc-plugin-hello.git"
+      }
+   },
+   "version" : "0.001002"
 }

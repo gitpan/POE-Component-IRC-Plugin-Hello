@@ -3,7 +3,7 @@ package POE::Component::IRC::Plugin::Hello;
 use 5.014000;
 use strict;
 use warnings;
-our $VERSION = '0.001001';
+our $VERSION = '0.001002';
 
 use List::Util qw/first/;
 
@@ -11,32 +11,32 @@ use IRC::Utils qw/parse_user/;
 use POE::Component::IRC::Plugin qw/PCI_EAT_NONE/;
 
 sub new {
-  my $class = shift;
-  my $self = {
-	greetings => [qw/privet hello salut salutari neata neaţa hola hey hi bonjour wassup sup hallo chikmaa tungjatjeta parev salam namaskaar mingalarba ahoy saluton allo moin aloha namaste shalom ciào ciao servus salve ave merhaba witaj hei hola selam sawubona/, "what's up", 'que tal', 'こんにちは', '你好', 'ni hao'],
-	@_
-  };
+	my $class = shift;
+	my $self = {
+		greetings => [qw/privet hello salut salutari neata neaţa hola hey hi bonjour wassup sup hallo chikmaa tungjatjeta parev salam namaskaar mingalarba ahoy saluton allo moin aloha namaste shalom ciào ciao servus salve ave merhaba witaj hei hola selam sawubona/, "what's up", 'que tal', 'こんにちは', '你好', 'ni hao'],
+		@_
+	};
 
-  bless $self, $class
+	bless $self, $class
 }
 
 sub PCI_register {
-  my ($self, $irc) = @_;
-  $irc->plugin_register($self, SERVER => qw/public/);
-  1
+	my ($self, $irc) = @_;
+	$irc->plugin_register($self, SERVER => qw/public/);
+	1
 }
 
 sub PCI_unregister { 1 }
 
 sub S_public{
-  my ($self, $irc, $rfullname, $rchannels, $rmessage) = @_;
-  my $nick = parse_user $$rfullname;
-  my $mynick = $irc->nick_name;
-  my @hello = @{$self->{greetings}};
+	my ($self, $irc, $rfullname, $rchannels, $rmessage) = @_;
+	my $nick = parse_user $$rfullname;
+	my $mynick = $irc->nick_name;
+	my @hello = @{$self->{greetings}};
 
-  my $match = first { $$rmessage =~ /^\s*(?:$mynick(?:)[:,])?\s*$_\s*$/i } @hello;
-  $irc->yield(privmsg => $$rchannels->[0] => $hello[int rand $#hello].", $nick") if $match;
-  PCI_EAT_NONE
+	my $match = first { $$rmessage =~ /^\s*(?:$mynick(?:)[:,])?\s*$_\s*[.!]?\s*$/i } @hello;
+	$irc->yield(privmsg => $$rchannels->[0] => $hello[int rand $#hello].", $nick") if $match;
+	PCI_EAT_NONE
 }
 
 1;
